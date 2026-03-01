@@ -68,7 +68,7 @@ public:
 class Group {
 private:
     std::string            groupName;
-    std::vector<Student*>  students; // агрегация — группа не владеет студентами
+    std::vector<Student*>  students;
 
 public:
     explicit Group(const std::string& name) : groupName(name) {}

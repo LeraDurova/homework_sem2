@@ -33,13 +33,11 @@ int main() {
         }
     }
 
-    // Собираем средние баллы
     std::vector<double> averages;
     for (int i = 0; i < N; i++) {
         averages.push_back(studentAverage(grades[i]));
     }
 
-    // Подсчёт статистики ДО фильтрации
     int excellent = 0, risk = 0;
     for (double avg : averages) {
         if (avg >= 4.5) excellent++;
@@ -50,7 +48,6 @@ int main() {
     std::cout << "Enter threshold grade for removal: ";
     std::cin >> threshold;
 
-    // Erase-remove idiom с лямбдой
     averages.erase(
         std::remove_if(averages.begin(), averages.end(),
             [threshold](double avg) { return avg < threshold; }),

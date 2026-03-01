@@ -10,7 +10,7 @@ void printSeparator(const std::string& title) {
 }
 
 int main() {
-    // Создаём студентов
+
     Student* s1 = new Student("Ivanov",   1001);
     Student* s2 = new Student("Petrova",  1002);
     Student* s3 = new Student("Sidorov",  1003);
@@ -32,16 +32,16 @@ int main() {
     s4->addGrade(1.5);
     s4->addGrade(2.5);
 
-    // Создаём преподавателей (полиморфизм)
+
     Teacher* t1 = new Teacher("Smirnova", "Mathematics");
     Teacher* t2 = new Teacher("Belov",    "Physics");
 
-    // Вывод через указатель на Person
+
     printSeparator("Teachers (polymorphism)");
     std::vector<Person*> people = { t1, t2 };
     for (Person* p : people) p->print();
 
-    // Создаём группу и добавляем студентов
+
     Group group("IT-21");
     group.addStudent(s1);
     group.addStudent(s2);
@@ -51,21 +51,21 @@ int main() {
     printSeparator("Initial group list");
     group.printAll();
 
-    // Сортировка по среднему баллу
+
     printSeparator("After sorting");
     group.sortByAverage();
     group.printAll();
 
-    // Фильтрация: удаляем студентов с баллом ниже 3.0
+
     printSeparator("After filtering (threshold 3.0)");
     group.filterByThreshold(3.0);
     group.printAll();
 
-    // Сохранение в файл
+
     printSeparator("Save to file");
     FileManager::saveGroup("group.bin", group);
 
-    // Загрузка из файла
+
     printSeparator("Load from file");
     Group loadedGroup("Loaded");
     std::vector<Student*> loadedStudents;
@@ -73,7 +73,7 @@ int main() {
         loadedGroup.printAll();
     }
 
-    // Статистика по исходным студентам
+
     printSeparator("Statistics (original data)");
     int excellent = 0, risk = 0;
     Student* allStudents[] = { s1, s2, s3, s4 };
@@ -84,7 +84,7 @@ int main() {
     std::cout << "Excellent (>= 4.5): " << excellent << "\n";
     std::cout << "At risk of expulsion (< 3.0): " << risk << "\n";
 
-    // Освобождаем память
+
     delete s1;
     delete s2;
     delete s3;

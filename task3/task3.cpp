@@ -33,13 +33,13 @@ int main() {
         }
     }
 
-    // Формируем контейнер: индекс студента и его средний балл
+
     std::vector<std::pair<int, double>> indexed;
     for (int i = 0; i < N; i++) {
         indexed.push_back({i, studentAverage(grades[i])});
     }
 
-    // Сортировка: по убыванию среднего, при равенстве — по возрастанию индекса
+
     std::sort(indexed.begin(), indexed.end(),
         [](const std::pair<int, double>& a, const std::pair<int, double>& b) {
             if (a.second != b.second) return a.second > b.second;
@@ -51,7 +51,7 @@ int main() {
         std::cout << "  Student " << (p.first + 1) << ": average = " << p.second << "\n";
     }
 
-    // Захват по значению: считаем студентов выше порога
+
     double threshold = 3.5;
     int countAbove = 0;
     std::for_each(indexed.begin(), indexed.end(),
@@ -61,7 +61,7 @@ int main() {
 
     std::cout << "\nStudents with grade >= " << threshold << ": " << countAbove << "\n";
 
-    // Захват по ссылке: находим общую сумму средних
+
     double totalSum = 0;
     std::for_each(indexed.begin(), indexed.end(),
         [&totalSum](const std::pair<int, double>& p) {

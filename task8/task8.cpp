@@ -83,7 +83,7 @@ int main() {
     Student s2("Petrov", 1002);
     s2.addGrade(3.0);
     s2.addGrade(2.5);
-    s2.addGrade(6.0); // некорректная — должна быть отвергнута
+    s2.addGrade(6.0);
     s2.print();
 
     return 0;

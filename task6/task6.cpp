@@ -39,7 +39,7 @@ int main() {
     s1.addGrade(4.5);
     s1.addGrade(3.0);
     s1.addGrade(5.0);
-    s1.addGrade(6.0); // некорректная — должна быть отвергнута
+    s1.addGrade(6.0);
     s1.print();
 
     std::cout << "\n";
@@ -51,7 +51,7 @@ int main() {
 
     std::cout << "\n";
 
-    // Конструктор по умолчанию
+
     Student s3;
     s3.addGrade(4.0);
     s3.print();

@@ -11,7 +11,7 @@ int main() {
     std::cout << "\n";
 
     Student s2("Petrov", 1002);
-    s2.print(); // зачётка пуста
+    s2.print();
 
     return 0;
 }
